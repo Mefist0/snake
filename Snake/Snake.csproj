@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DIrection.cs" />
+    <Compile Include="Direction.cs" />
     <Compile Include="HorizontalLine.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Point.cs" />

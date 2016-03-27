@@ -22,6 +22,11 @@ namespace Snake
             VerticalLine rightWall = new VerticalLine(78, 1, 22, '+');
             rightWall.Draw();
 
+            // Отображение змейки.
+            Point startPos = new Point(4, 5, '*');
+            Snake snake = new Snake(startPos, 5, Direction.UP);
+            snake.Draw();
+
             Console.ReadLine();
         }
     }

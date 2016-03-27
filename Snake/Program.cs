@@ -13,11 +13,8 @@ namespace Snake
             Point p1 = new Point(5,5,'@');
             p1.Draw();
 
-            //Point p2 = new Point();
-            //p2._x = 10;
-            //p2._y = 10;
-            //p2._sym = '*';
-            //p2.Draw();
+            HorizontalLine hLine = new HorizontalLine(5, 5, 20, '+');
+            hLine.Draw();
 
         }
     }

@@ -8,12 +8,12 @@ namespace Snake
 {
     class Snake : Line
     {
-        Direction _direction;
+        Direction direction;
 
-        public Snake(Point tail, int length, Direction direction)
+        public Snake(Point tail, int length, Direction _direction)
         {
             pointsList = new List<Point>();
-            _direction = direction;
+            direction = _direction;
             for (int i = 0; i < length; i++)
             {
                 Point p = new Point(tail);
@@ -39,8 +39,29 @@ namespace Snake
         {
             Point head = pointsList.Last();
             Point nextPoint = new Point(head);
-            nextPoint.Move(1, _direction);
+            nextPoint.Move(1, direction);
             return nextPoint;
+        }
+
+        public void KeyHandle(ConsoleKey key)
+        {
+            switch (key)
+            {
+                case ConsoleKey.LeftArrow:
+                    this.direction = Direction.LEFT;
+                    break;
+                case ConsoleKey.UpArrow:
+                    this.direction = Direction.UP;
+                    break;
+                case ConsoleKey.RightArrow:
+                    this.direction = Direction.RIGHT;
+                    break;
+                case ConsoleKey.DownArrow:
+                    this.direction = Direction.DOWN;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

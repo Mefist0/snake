@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Snake
@@ -23,11 +24,20 @@ namespace Snake
             rightWall.Draw();
 
             // Отображение змейки.
-            Point startPos = new Point(4, 5, '*');
-            Snake snake = new Snake(startPos, 5, Direction.UP);
+            Point startPos = new Point(10, 10, '*');
+            Snake snake = new Snake(startPos, 4, Direction.RIGHT);
             snake.Draw();
 
-            Console.ReadLine();
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.KeyHandle(key.Key);
+                }
+                Thread.Sleep(300);
+                snake.Move();
+            }
         }
     }
 }

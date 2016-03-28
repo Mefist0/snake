@@ -32,6 +32,11 @@ namespace Snake
             Draw();
         }
 
+        public bool IsHit(Point p)
+        {
+            return p._x == this._x && p._y == this._y;
+        }
+
         public void Move(int offset, Direction direction)
         {
             switch (direction)

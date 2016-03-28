@@ -26,6 +26,12 @@ namespace Snake
             this._sym = sym;
         }
 
+        public void Clear()
+        {
+            _sym = ' ';
+            Draw();
+        }
+
         public void Move(int offset, Direction direction)
         {
             switch (direction)

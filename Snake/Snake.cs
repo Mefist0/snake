@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Snake : Line
+    class Snake : Figure
     {
         Direction direction;
 
